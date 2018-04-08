@@ -1,1 +1,49 @@
-test
+#include <stdio.h>
+#define swap1(a,b,c,d,t) (t=a,a=b,b=c,c=d,d=t)
+#define swap2(a,b,t) (t=a,a=b,b=t)
+float culculate(float ,float ,int );
+void cul(int);
+int main()
+{
+    float a,b,c,d,temp,whe=0,temp1,temp2,temp3;
+    scanf("%f %f %f %f",&a,&b,&c,&d);
+    char sign[4]={'+','-','*','/'};
+    for(int i = 0;i<4;i++)
+    {
+        swap1(a,b,c,d,temp);
+        for(int j = 0;j<4;j++)
+            for(int k = 0;k<4;k++)
+                for(int h = 0;h<4;h++)
+                    if((culculate(culculate(culculate(a,b,j),c,k),d,h))==24)
+                    {
+                        printf("YES (((%d%c%d)%c%d)%c%d)",(int)a,sign[j],(int)b,sign[k],(int)c,sign[h],(int)d);
+                        whe = 1;
+                    }
+    }
+    if(whe == 0)
+        printf("NO");
+}
+float culculate(float a,float b,int state)
+{
+   switch(state)
+   {
+       case 0:
+           return a+b;break;
+       case 1:
+           if(a-b<0)
+               return b-a;
+           else
+               return a-b;
+           break;
+       case 2:
+           return a*b;break;
+       case 3:
+           if(b != 0)
+               return a/b;
+           else
+               return 0;
+           break;
+       default:
+           return -1;
+   }
+}
