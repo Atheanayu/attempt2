@@ -30,7 +30,7 @@ long factorial_num(int n){
         num*=(n--);
     return num;
 }
-long long combinatorial_num(int n,int k){
+long combinatorial_num(int n,int k){
     return factorial_num(n)/(factorial_num(k)*factorial_num(n-k));
 }
 void standard_output(long long charactor,int length){
