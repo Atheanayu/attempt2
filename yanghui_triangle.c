@@ -24,7 +24,7 @@ print_yanghui_triangle(int layer){
         count = 0;
     }
 }
-long factorial_num(int n){
+long long factorial_num(int n){
     long long num=1;
     while(n)
         num*=(n--);
