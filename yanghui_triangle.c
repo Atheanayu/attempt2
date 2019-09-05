@@ -10,7 +10,7 @@ int main(){
     print_yanghui_triangle(10);
     return 0;
 }
-void print_yanghui_triangle(int layer){
+print_yanghui_triangle(int layer){
     int temp = 0,count = 0,length = get_num_length(combinatorial_num(layer,layer/2));/* get the length of the longest number */
     for(int i = layer;i>0;i--){
         /* print the triangle, the triangle can be described by |x|+|y| < layer+2 */
